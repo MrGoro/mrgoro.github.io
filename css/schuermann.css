@@ -1,0 +1,205 @@
+/* ==================================================
+   Basic Styles
+================================================== */
+
+html, body {
+	height: 100%;
+}
+
+body{
+	background: #F5F6F6;
+	color: #55606A;
+	font-weight: 500;
+	font-size: 16px;
+	font-family: 'Open Sans', sans-serif;
+	line-height: 28px;
+}
+
+h1 {
+	font-size: 55px;
+}
+
+h2 {
+	font-size: 40px;
+	margin-bottom: 20px;
+}
+
+h3 {
+	margin-bottom: 15px;
+}
+
+.white {
+    color: white;
+}
+
+.btn-lg, .form-control {
+	border-radius: 0px;
+}
+
+
+/* ==================================================
+   Start
+================================================== */
+
+#start {
+	position: relative;
+	overflow: hidden;
+	
+	min-height: 100%;
+	height: auto;
+	/* Negative indent footer by its height */
+	margin: 0 auto -51px;
+	/* Pad bottom by footer height */
+	padding: 0 0 51px;
+	
+	/* Parallax */
+    background: url('../img/landungsbruecken-nacht.jpg') 80% 0 fixed; 
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+}
+
+#start .overlay {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: #26292E;
+	opacity: 0.5;
+	filter: alpha(opacity=50);
+	z-index: 0;
+}
+
+#start .btn-default {
+	background: rgba(255, 255, 255, .2);
+	border-color: rgba(255, 255, 255, 0.4);
+}
+
+#start .btn-default:hover {
+	background: rgba(255, 255, 255, .7);
+}
+
+#start .content {
+	position: relative;
+	color: #FFFFFF;
+	z-index: 1;
+	margin: auto;
+}
+
+
+/* ==================================================
+   Navigation
+================================================== */
+
+.navbar  {
+	margin-bottom: 0px;
+	border-radius: 0px;
+}
+
+.anker-helper {
+	position: relative;
+	top: -25px;
+}
+
+
+/* ==================================================
+   Section Page
+================================================== */
+
+.page {
+	background: #F5F6F6;
+	padding: 40px 0;
+	position: relative;
+}
+
+.div-img {
+	height: 500px;
+}
+
+#projects-img {
+	background: url('../img/hifive-banner.png') no-repeat;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+}
+
+#social-img {
+	background: url('../img/elbphilharmonie.jpg') 50% 0 fixed; 
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+}
+
+#contact-img {
+	background: url('../img/landungsbruecken.jpg') 50% 0 fixed; 
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+}
+
+#footer {
+	height: 391px;
+	color: #FFFFFF;
+	padding-top: 50px;
+	background: #383838;
+}
+
+@media only screen and (min-device-width: 768px) {
+	#footer {
+		padding: 50px 50px;
+		background: #383838 url('../img/europe.png') no-repeat top right;
+	}
+}
+
+#footer a {
+	color: #FFFFFF;
+}
+
+#footer h3 {
+	margin-top: 0px;
+}
+
+
+/* ==================================================
+   Section Page
+================================================== */
+
+.social-img {
+	display: block;
+	width: 256px;
+	height: 300px;
+}
+
+#xing-img {
+	background: url('../img/social/xing-sw.png') no-repeat;
+}
+
+#xing-img:hover {
+	background: url('../img/social/xing.png') no-repeat;
+}
+
+#googleplus-img {
+	background: url('../img/social/googleplus-sw.png') no-repeat;
+}
+
+#googleplus-img:hover {
+	background: url('../img/social/googleplus.png') no-repeat;
+}
+
+#facebook-img {
+	background: url('../img/social/facebook-sw.png') no-repeat;
+}
+
+#facebook-img:hover {
+	background: url('../img/social/facebook.png') no-repeat;
+}
+
+/* ReCaptcha Workaround for empty iFrame */
+iframe[src="about:blank"]{display:none;}
+
+#captcha {
+	margin-bottom: 10px;
+}
