@@ -197,6 +197,14 @@ h3 {
 	background: url('../img/social/facebook.png') no-repeat;
 }
 
+#github-img {
+	background: url('../img/social/github-sw.png') no-repeat;
+}
+
+#github-img:hover {
+	background: url('../img/social/github.png') no-repeat;
+}
+
 /* ReCaptcha Workaround for empty iFrame */
 iframe[src="about:blank"]{display:none;}
 
