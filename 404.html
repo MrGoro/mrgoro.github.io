@@ -2,12 +2,14 @@
 <html>
 <head>
     <meta charset="utf-8"/>
-    <title>fi go!</title>
+    <title>Philipp-Schuermann.de</title>
     <script>
         // Store the URL the user was trying to access when receiving the 404.
+        sessionStorage.redirect = location.href;
         if(location.href.includes("/fi-go/")) {
-            sessionStorage.redirect = location.href;
-            window.location = "/fi-go";
+            window.location = "https://philipp-schuermann.de/fi-go";
+        } else {
+            window.location = "https://philipp-schuermann.de/";
         }
     </script>
 </head>
