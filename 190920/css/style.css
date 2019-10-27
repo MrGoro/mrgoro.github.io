@@ -1,3 +1,8 @@
+/* Custom */
+.hashtag {
+  text-transform: none !important;
+}
+
 /*------------------------------------------------------------------
 [Master Stylesheet]
 Theme Name:
