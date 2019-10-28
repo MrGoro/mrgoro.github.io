@@ -40,6 +40,14 @@
     padding-bottom: 0;
 }
 
+.event {
+    overflow: auto !important;
+}
+
+.center {
+    text-align: center;
+}
+
 
 /*------------------------------------------------------------------
 [Master Stylesheet]

@@ -323,7 +323,7 @@
                 <!-- end section-title -->
                 <div class="row">
                     <div class="col col-lg-10 col-lg-offset-1 ">
-                        <div class="">
+                        <div class="center">
                             <div title="Zum Kalender hinzufügen" class="addeventatc">
                                 Zum Kalender hinzufügen
                                 <span class="start">19.09.2020</span>
@@ -488,6 +488,16 @@
 
     <!-- AddEvent script -->
     <script type="text/javascript" src="https://addevent.com/libs/atc/1.6.1/atc.min.js" async defer></script>
+    <script type="text/javascript">
+        window.addeventasync = function() {
+            addeventatc.settings({
+                yahoo: {
+                    show: false,
+                },
+                mouse: true
+            });
+        };
+    </script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-50190529-1 "></script>
