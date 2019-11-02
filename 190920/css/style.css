@@ -56,6 +56,24 @@
     margin-top: 20px;
 }
 
+blockquote {
+    border-right: 5px solid #eee;
+    border-left: none;
+}
+
+blockquote p:before {
+    content: open-quote;
+    font: 1.5em/150% Georgia, serif
+}
+
+blockquote p:after {
+    content: close-quote;
+    font: 1.5em/150% Georgia, serif
+}
+
+figcaption {
+    display: inline;
+}
 
 /*------------------------------------------------------------------
 [Master Stylesheet]
