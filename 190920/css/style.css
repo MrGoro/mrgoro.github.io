@@ -48,6 +48,14 @@
     text-align: center;
 }
 
+.signature-text {
+    margin-left: 20px !important;
+}
+
+.spotify {
+    margin-top: 20px;
+}
+
 
 /*------------------------------------------------------------------
 [Master Stylesheet]
