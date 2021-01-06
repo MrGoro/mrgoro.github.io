@@ -4,6 +4,26 @@
     object-fit: cover;
 }
 
+.hero .save-the-date .fi {
+    /*color: #ffffff;*/
+    display: inline-block;
+    -webkit-transform: rotate(135deg);
+    -ms-transform: rotate(135deg);
+    transform: rotate(135deg);
+}
+
+.hero .wedding-announcement .save-the-date {
+    background-color: #ffffff !important;
+}
+
+.hero .wedding-announcement .save-the-date:before {
+    background-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.hero .wedding-announcement .save-the-date:after {
+    background-color: rgba(255, 255, 255, 0.7) !important;
+}
+
 #group-photo {
     height: 600px;
 }
