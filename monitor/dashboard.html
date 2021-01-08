@@ -7,7 +7,7 @@
     <meta name="google" content="notranslate">
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700' rel='stylesheet' type='text/css'>
-    <title>BTC-Peis</title>
+    <title>₿ Price Dashboard</title>
     <style>
         html, 
         body {
@@ -27,14 +27,35 @@
             font-size: 4em;
         }
 
-        .top {
-            /**height: 30%;**/
-            width: 100%;
+        .box {
+            display: flex;
+            flex-flow: column;
+            height: 100%;
         }
 
-        .bottom {
-            /**height: 100%;**/
-            width: 100%;
+        .box .row {
+            border: 1px dotted grey;
+        }
+
+        .box .row.header {
+            flex: 0 1 auto;
+            /* The above is shorthand for:
+            flex-grow: 0,
+            flex-shrink: 1,
+            flex-basis: auto
+            */
+        }
+
+        .box .row.content {
+            flex: 1 1 auto;
+        }
+
+        .box .row.footer {
+            flex: 0 1 40px;
+        }
+
+        .tradingview-widget-container {
+            height: 100%;
         }
 
         #tradingview_d74fb {
@@ -44,33 +65,42 @@
 </head>
 
 <body>
-    <div class="top">
-        <h1 id="btc-price">$$$</h1>
+    <div class="box">
+        <div class="row header">
+            <h1 id="btc-price">₿ Price Dashboard</h1>
+        </div>
+        <div class="row content">
+            <!-- TradingView Widget BEGIN -->
+            <div class="tradingview-widget-container">
+                <div id="tradingview_d74fb"></div>
+                <div class="tradingview-widget-copyright"><a href="https://de.tradingview.com/symbols/BTCUSD/?exchange=BITSTAMP" rel="noopener" target="_blank"><span class="blue-text">BTCUSD Chart</span></a> von TradingView</div>
+                <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+                <script type="text/javascript">
+                    new TradingView.widget({
+                        "autosize": true,
+                        "symbol": "BITSTAMP:BTCUSD",
+                        "interval": "15",
+                        "timezone": "Europe/Berlin",
+                        "theme": "dark",
+                        "style": "1",
+                        "locale": "de_DE",
+                        "toolbar_bg": "#f1f3f6",
+                        "enable_publishing": false,
+                        "hide_top_toolbar": true,
+                        "save_image": false,
+                        "details": false,
+                        "container_id": "tradingview_d74fb"
+                    });
+                </script>
+            </div>
+            <!-- TradingView Widget END -->
+        </div>
+        <!--
+        <div class="row footer">
+          <p><b>footer</b> (fixed height)</p>
+        </div>
+        -->
     </div>
-    <!-- TradingView Widget BEGIN -->
-    <div class="bottom tradingview-widget-container">
-        <div id="tradingview_d74fb"></div>
-        <div class="tradingview-widget-copyright"><a href="https://de.tradingview.com/symbols/BTCUSD/?exchange=BITSTAMP" rel="noopener" target="_blank"><span class="blue-text">BTCUSD Chart</span></a> von TradingView</div>
-        <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-        <script type="text/javascript">
-            new TradingView.widget({
-                "autosize": true,
-                "symbol": "BITSTAMP:BTCUSD",
-                "interval": "15",
-                "timezone": "Europe/Berlin",
-                "theme": "dark",
-                "style": "1",
-                "locale": "de_DE",
-                "toolbar_bg": "#f1f3f6",
-                "enable_publishing": false,
-                "hide_top_toolbar": true,
-                "save_image": false,
-                "details": false,
-                "container_id": "tradingview_d74fb"
-            });
-        </script>
-    </div>
-    <!-- TradingView Widget END -->
 
     <script type="text/javascript">
         var placeholder = document.getElementById('btc-price'),
@@ -97,7 +127,9 @@
          */
         function serializeTrade(data) {
             //child.innerHTML = '(' + data.timestamp + ') ' + data.id + ': ' + data.amount + ' BTC @ ' + data.price + ' USD ' + data.type;
-            placeholder.innerHTML = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'USD' }).format(data.price);
+            var price = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'USD' }).format(data.price);
+            placeholder.innerHTML = price;
+            document.title = price + " = 1 ₿"
         }
     
         function initWebsocket() {
